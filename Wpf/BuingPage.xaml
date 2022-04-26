@@ -1,0 +1,71 @@
+﻿<Page x:Class="Wpf.BuingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Wpf"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="BuingPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition>
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Count" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Type payment" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"></TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Method delivery" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"></TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Surname" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"></TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Name" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"></TextBlock>
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Patronymic" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"></TextBlock>
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="Phone" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"></TextBlock>
+        <TextBlock Grid.Row="7" Grid.Column="0" Text="Street" Name="tblockStreet" Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"></TextBlock>
+        <TextBlock Grid.Row="8" Grid.Column="0" Text="Home" Name="tblockHome"  Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"></TextBlock>
+        <ComboBox Grid.Row="1" Name="typePayment" Grid.Column="1">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" FontFamily="Lucida Calligraphy" FontSize="20"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <ComboBox Grid.Row="2" Name="methodDelivery" Grid.Column="1" SelectionChanged="methodDelivery_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" FontFamily="Lucida Calligraphy" FontSize="20"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBox Grid.Row="0" Grid.Column="1" x:Name="tbCount"></TextBox>
+        <TextBox Grid.Row="3" Grid.Column="1" x:Name="tbSurname"></TextBox>
+        <TextBox Grid.Row="4" Grid.Column="1" x:Name="tbName"></TextBox>
+        <TextBox Grid.Row="5" Grid.Column="1" x:Name="tbPatronymic"></TextBox>
+        <TextBox Grid.Row="6" Grid.Column="1" x:Name="tbPhone"></TextBox>
+
+        <TextBox Grid.Row="7" Grid.Column="1" x:Name="tbStreet" Visibility="Hidden"></TextBox>
+        <TextBox Grid.Row="8" Grid.Column="1" x:Name="tbHome" Visibility="Hidden"></TextBox>
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Row="9" HorizontalAlignment="Center">
+            <Button Content="Back" Grid.ColumnSpan="2" Width="100" Grid.Row="9" Click="Button_Click"></Button>
+            <Button Content="Ok" Grid.ColumnSpan="2" Width="100" Grid.Row="9" Name="btnOk" Click="btnOk_Click"></Button>
+        </StackPanel>
+       
+    </Grid>
+</Page>

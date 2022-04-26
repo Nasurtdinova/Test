@@ -1,0 +1,14 @@
+C:\Users\nasur\source\repos\Lab1\Lab2_Zad1\bin\Debug\netcoreapp3.1\Lab2_Zad1.exe
+C:\Users\nasur\source\repos\Lab1\Lab2_Zad1\bin\Debug\netcoreapp3.1\Lab2_Zad1.deps.json
+C:\Users\nasur\source\repos\Lab1\Lab2_Zad1\bin\Debug\netcoreapp3.1\Lab2_Zad1.runtimeconfig.json
+C:\Users\nasur\source\repos\Lab1\Lab2_Zad1\bin\Debug\netcoreapp3.1\Lab2_Zad1.runtimeconfig.dev.json
+C:\Users\nasur\source\repos\Lab1\Lab2_Zad1\bin\Debug\netcoreapp3.1\Lab2_Zad1.dll
+C:\Users\nasur\source\repos\Lab1\Lab2_Zad1\bin\Debug\netcoreapp3.1\Lab2_Zad1.pdb
+C:\Users\nasur\source\repos\Lab1\Lab2_Zad1\obj\Debug\netcoreapp3.1\Lab2_Zad1.csproj.AssemblyReference.cache
+C:\Users\nasur\source\repos\Lab1\Lab2_Zad1\obj\Debug\netcoreapp3.1\Lab2_Zad1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nasur\source\repos\Lab1\Lab2_Zad1\obj\Debug\netcoreapp3.1\Lab2_Zad1.AssemblyInfoInputs.cache
+C:\Users\nasur\source\repos\Lab1\Lab2_Zad1\obj\Debug\netcoreapp3.1\Lab2_Zad1.AssemblyInfo.cs
+C:\Users\nasur\source\repos\Lab1\Lab2_Zad1\obj\Debug\netcoreapp3.1\Lab2_Zad1.csproj.CoreCompileInputs.cache
+C:\Users\nasur\source\repos\Lab1\Lab2_Zad1\obj\Debug\netcoreapp3.1\Lab2_Zad1.dll
+C:\Users\nasur\source\repos\Lab1\Lab2_Zad1\obj\Debug\netcoreapp3.1\Lab2_Zad1.pdb
+C:\Users\nasur\source\repos\Lab1\Lab2_Zad1\obj\Debug\netcoreapp3.1\Lab2_Zad1.genruntimeconfig.cache
