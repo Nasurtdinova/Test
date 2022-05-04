@@ -1,0 +1,7 @@
+C:\Users\nasur\source\repos\Lab1\PharmacyProject\bin\Debug\PharmacyProject.exe.config
+C:\Users\nasur\source\repos\Lab1\PharmacyProject\bin\Debug\PharmacyProject.exe
+C:\Users\nasur\source\repos\Lab1\PharmacyProject\bin\Debug\PharmacyProject.pdb
+C:\Users\nasur\source\repos\Lab1\PharmacyProject\obj\Debug\PharmacyProject.csproj.AssemblyReference.cache
+C:\Users\nasur\source\repos\Lab1\PharmacyProject\obj\Debug\PharmacyProject.csproj.CoreCompileInputs.cache
+C:\Users\nasur\source\repos\Lab1\PharmacyProject\obj\Debug\PharmacyProject.exe
+C:\Users\nasur\source\repos\Lab1\PharmacyProject\obj\Debug\PharmacyProject.pdb

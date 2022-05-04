@@ -149,7 +149,7 @@ namespace Wpf {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Wpf;component/buingpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Wpf;V1.0.0.0;component/buingpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\BuingPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
