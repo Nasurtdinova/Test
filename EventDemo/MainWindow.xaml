@@ -1,0 +1,22 @@
+﻿<Window x:Class="EventDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EventDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button x:Name="btnBack" HorizontalAlignment="Left" Click="btnBack_Click">Back</Button>
+        <Button x:Name="btnExit" HorizontalAlignment="Right" Click="btnExit_Click">Logout</Button>
+        <StackPanel>
+            <TextBlock>Мероприятия</TextBlock>
+            <TextBlock x:Name="tbName" Margin="40"></TextBlock>
+        </StackPanel>
+        <Frame x:Name="mainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
+    </Grid>
+</Window>

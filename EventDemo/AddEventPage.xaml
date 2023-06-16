@@ -1,0 +1,37 @@
+﻿<Page x:Class="EventDemo.AddEventPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EventDemo"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Добавить мероприятие">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock>Начало</TextBlock>
+        <TextBlock Grid.Row="1">Окончание</TextBlock>
+        <TextBlock Grid.Row="2">Мероприятие</TextBlock>
+        <TextBlock Grid.Row="3">Направление</TextBlock>
+        <TextBlock Grid.Row="4">Город </TextBlock>
+        <TextBlock Grid.Row="5">Активности</TextBlock>
+
+        <DatePicker Grid.Column="1"></DatePicker>
+        <DatePicker Grid.Column="1" Grid.Row="1"></DatePicker>
+        <TextBox Grid.Column="1" Grid.Row="2"></TextBox>
+        <ComboBox Grid.Column="1" Grid.Row="3" DisplayMemberPath="Name" Name="comboType"></ComboBox>
+        <ComboBox Grid.Column="1" Grid.Row="4" TextBoxBase.TextChanged="comboCity_TextChanged" IsEditable="True" DisplayMemberPath="Name" Name="comboCity"></ComboBox>
+    </Grid>
+</Page>

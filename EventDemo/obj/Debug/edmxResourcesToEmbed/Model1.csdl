@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EventsDemoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EventsDemoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Activity" EntityType="EventsDemoModel.Activity" />
+    <EntitySet Name="City" EntityType="EventsDemoModel.City" />
+    <EntitySet Name="Country" EntityType="EventsDemoModel.Country" />
+    <EntitySet Name="Event" EntityType="EventsDemoModel.Event" />
+    <EntitySet Name="Role" EntityType="EventsDemoModel.Role" />
+    <EntitySet Name="sysdiagrams" EntityType="EventsDemoModel.sysdiagrams" />
+    <EntitySet Name="TypeEvent" EntityType="EventsDemoModel.TypeEvent" />
+    <EntitySet Name="User" EntityType="EventsDemoModel.User" />
+    <AssociationSet Name="FK_Activity_Event" Association="EventsDemoModel.FK_Activity_Event">
+      <End Role="Event" EntitySet="Event" />
+      <End Role="Activity" EntitySet="Activity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Activity_User" Association="EventsDemoModel.FK_Activity_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Activity" EntitySet="Activity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_City_Country" Association="EventsDemoModel.FK_City_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_City" Association="EventsDemoModel.FK_Event_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Event" EntitySet="Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Country" Association="EventsDemoModel.FK_User_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_TypeEvent" Association="EventsDemoModel.FK_Event_TypeEvent">
+      <End Role="TypeEvent" EntitySet="TypeEvent" />
+      <End Role="Event" EntitySet="Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Role" Association="EventsDemoModel.FK_User_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Activity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdEvent" Type="Int32" />
+    <Property Name="Day" Type="Int32" />
+    <Property Name="TimeStart" Type="Time" Precision="7" />
+    <Property Name="IdWinner" Type="Int32" />
+    <NavigationProperty Name="Event" Relationship="EventsDemoModel.FK_Activity_Event" FromRole="Activity" ToRole="Event" />
+    <NavigationProperty Name="User" Relationship="EventsDemoModel.FK_Activity_User" FromRole="Activity" ToRole="User" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="IdCountry" Type="Int32" />
+    <Property Name="Emblem" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Country" Relationship="EventsDemoModel.FK_City_Country" FromRole="City" ToRole="Country" />
+    <NavigationProperty Name="Event" Relationship="EventsDemoModel.FK_Event_City" FromRole="City" ToRole="Event" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NameEngl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="City" Relationship="EventsDemoModel.FK_City_Country" FromRole="Country" ToRole="City" />
+    <NavigationProperty Name="User" Relationship="EventsDemoModel.FK_User_Country" FromRole="Country" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateStart" Type="DateTime" Precision="3" />
+    <Property Name="Duration" Type="Time" Precision="7" />
+    <Property Name="IdCity" Type="Int32" />
+    <Property Name="IdType" Type="Int32" />
+    <NavigationProperty Name="Activity" Relationship="EventsDemoModel.FK_Activity_Event" FromRole="Event" ToRole="Activity" />
+    <NavigationProperty Name="City" Relationship="EventsDemoModel.FK_Event_City" FromRole="Event" ToRole="City" />
+    <NavigationProperty Name="TypeEvent" Relationship="EventsDemoModel.FK_Event_TypeEvent" FromRole="Event" ToRole="TypeEvent" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="EventsDemoModel.FK_User_Role" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TypeEvent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Event" Relationship="EventsDemoModel.FK_Event_TypeEvent" FromRole="TypeEvent" ToRole="Event" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="FIO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdRole" Type="Int32" />
+    <Property Name="IdCuntry" Type="Int32" />
+    <Property Name="DateBirtday" Type="DateTime" Precision="0" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Activity" Relationship="EventsDemoModel.FK_Activity_User" FromRole="User" ToRole="Activity" />
+    <NavigationProperty Name="Country" Relationship="EventsDemoModel.FK_User_Country" FromRole="User" ToRole="Country" />
+    <NavigationProperty Name="Role" Relationship="EventsDemoModel.FK_User_Role" FromRole="User" ToRole="Role" />
+  </EntityType>
+  <Association Name="FK_Activity_Event">
+    <End Type="EventsDemoModel.Event" Role="Event" Multiplicity="0..1" />
+    <End Type="EventsDemoModel.Activity" Role="Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Activity">
+        <PropertyRef Name="IdEvent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Activity_User">
+    <End Type="EventsDemoModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="EventsDemoModel.Activity" Role="Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Activity">
+        <PropertyRef Name="IdWinner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_City_Country">
+    <End Type="EventsDemoModel.Country" Role="Country" Multiplicity="0..1" />
+    <End Type="EventsDemoModel.City" Role="City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="IdCountry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_City">
+    <End Type="EventsDemoModel.City" Role="City" Multiplicity="0..1" />
+    <End Type="EventsDemoModel.Event" Role="Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="IdCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Country">
+    <End Type="EventsDemoModel.Country" Role="Country" Multiplicity="0..1" />
+    <End Type="EventsDemoModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="IdCuntry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_TypeEvent">
+    <End Type="EventsDemoModel.TypeEvent" Role="TypeEvent" Multiplicity="0..1" />
+    <End Type="EventsDemoModel.Event" Role="Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeEvent">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="IdType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Role">
+    <End Type="EventsDemoModel.Role" Role="Role" Multiplicity="0..1" />
+    <End Type="EventsDemoModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="IdRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
